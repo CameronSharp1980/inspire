@@ -5,7 +5,8 @@ function ImageService() {
 
 	this.getImage = function (callWhenDone) {
 		// ^^^^^^^ How do you call this function?
-		return $.get(apiUrl, function (res) {
+		//removed return from line below...Not sure if needed (prevented two image calls)
+		$.get(apiUrl, function (res) {
 			res = JSON.parse(res)
 			console.log('Image Data:', res)
 			callWhenDone(res)

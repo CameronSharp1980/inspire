@@ -10,6 +10,7 @@ function WeatherService() {
 			// HEY FUN FACT 
 			// Have you ever wanted to know the temperature measured in kelvin?
 			// You should probably convert the temperature data
+			res.main.temp = (9 / 5 * (res.main.temp - 273) + 32).toFixed(1)
 			callWhenDone(res);
 		})
 	}

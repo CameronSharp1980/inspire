@@ -16,8 +16,18 @@
 	</div>
 
 	<div id="todo">
-		<form onsubmit=""></form>
-		A Todo List
+		<form onsubmit="app.controllers.todoController.addTodoFromForm(event)">
+			<label for="todo">Enter new Todo:</label>
+			<input type="text" name="todo" placeholder="Add Todo" required>
+			<button type="submit">Add To do</button>
+		</form>
+		<div id="todo-list">
+			A Todo List
+			<form>
+				<!-- <input type="checkbox" name="${}"> -->
+				<!-- FINISH FORM TEMPLATE FOR CHECKBOXES -->
+			</form>
+		</div>
 	</div>
 
 

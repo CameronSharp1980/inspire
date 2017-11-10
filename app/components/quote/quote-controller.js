@@ -1,8 +1,10 @@
-function QuoteController(){
+function QuoteController() {
 
-	var qs = new QuoteService()
+	var quoteService = new QuoteService()
 
-	qs.getQuote(function(quote){
+	quoteService.getQuote(function (quote) {
 		console.log('What is the quote', quote)
+		var quoteElem = document.getElementById('quote')
+		quoteElem.innerHTML = `<p>${quote.quote}`
 	})
 }
