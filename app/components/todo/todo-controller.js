@@ -24,12 +24,16 @@ function TodoController() {
 		for (var i = 0; i < todos.length; i++) {
 			var todo = todos[i];
 			var checked = todo.status == "disabled" ? "checked=true" : ""
+			// ***Start here = maybe add a span after the input template line with an id
+			//   to style the text? Come back after getting the deletes to work.
+			// var style = todo.status == "disabled" ? `style='color: blue'` : `style='color: yellow'`
 			var index = i; // Should match index of each todo in array (Use for delete)
 			template += `
 			<input type="checkbox"  onchange="app.controllers.todoController.toggleTodoStatus(event)" name="${i}" value="${i}" ${checked}>${todo.todo}<br>
 			`
 			// <p>${todo.todo}${index}</p>			
 		}
+		template += `<button type="submit">Delete finished Todo items</button>`
 		todoElem.innerHTML = template
 	}
 	this.addTodoFromForm = function (e) {
@@ -54,6 +58,7 @@ function TodoController() {
 	this.toggleTodoStatus = function (event) {
 		// console.log(event)
 		var todoId = event.target.value
+		// console.log(event.target)
 		// console.log(todoId)
 		// asks the service to edit the todo status
 		// todoId = todoId.value
@@ -62,8 +67,9 @@ function TodoController() {
 		// YEP THATS IT FOR ME
 	}
 
-	this.removeTodo = function (todoIndex) { //needs index? take in todo and find by value?
-
+	this.removeTodo = function (event) { //needs index? take in todo and find by value?
+		event.preventDefault() //event passed only so I could prevent default
+		todoService.removeTodo(getTodos)
 
 		// ^^^^ THIS LINE OF CODE PROBABLY LOOKS VERY SIMILAR TO THE toggleTodoStatus
 	}

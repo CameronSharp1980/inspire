@@ -13,6 +13,7 @@ function TodoService() {
 		$.get(baseUrl)
 			.then(function (res) { // <-- WHY IS THIS IMPORTANT????
 				todoList = res
+				console.log("Response todoList[] : ", res)
 				console.log("Local todoList[] : ", todoList)
 				draw(res)
 			})
@@ -32,7 +33,8 @@ function TodoService() {
 		// MAKE SURE WE THINK THIS ONE THROUGH
 		//STEP 1: Find the todo by its index **HINT** todoList
 		// PASSED IN INDEX ALREADY
-		//STEP 2: Change the completed flag to the opposite of what is is **HINT** todo.completed = !todo.completed
+		//STEP 2: Change the completed flag to the opposite of what is is 
+		//**HINT** todo.completed = !todo.completed
 		if (todoList[todoId].status == 'enabled') {
 			todoList[todoId].status = 'disabled'
 		} else {
@@ -52,8 +54,28 @@ function TodoService() {
 			.fail(logError)
 	}
 
-	this.removeTodo = function () {
-		// Umm this one is on you to write.... It's also unique, like the ajax call above. The method is a DELETE
+	this.removeTodo = function (callWhenDone) {
+		// Umm this one is on you to write.... 
+		// It's also unique, like the ajax call above. The method is a DELETE
+
+		// Iterating through todos from the end of the array so that index
+		// shifting is not a problem as I remove elements
+		// Each iteration checks the status of the todo, and if 'disabled'
+		// runs a 'DELETE' for the element at 'i'
+		for (var i = todoList.length - 1; i >= 0; i--) {
+			var todo = todoList[i];
+			if (todo.status == 'disabled') {
+				$.ajax({
+					method: 'DELETE',
+					contentType: 'application/json',
+					url: baseUrl + '/' + i,
+				})
+					.then(function (res) {
+						callWhenDone()
+					})
+					.fail(logError)
+			}
+		}
 
 	}
 
