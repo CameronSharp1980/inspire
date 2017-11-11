@@ -23,10 +23,12 @@ function TodoController() {
 		//DONT FORGET TO LOOP
 		for (var i = 0; i < todos.length; i++) {
 			var todo = todos[i];
+			var checked = todo.status == "disabled" ? "checked=true" : ""
 			var index = i; // Should match index of each todo in array (Use for delete)
 			template += `
-			<p>${todo.todo}${index}</p>			
+			<input type="checkbox"  onchange="app.controllers.todoController.toggleTodoStatus(event)" name="${i}" value="${i}" ${checked}>${todo.todo}<br>
 			`
+			// <p>${todo.todo}${index}</p>			
 		}
 		todoElem.innerHTML = template
 	}
@@ -36,7 +38,8 @@ function TodoController() {
 		var form = e.target
 		var todo = {
 			// DONT FORGET TO BUILD YOUR TODO OBJECT
-			todo: form.todo.value
+			todo: form.todo.value,
+			status: "enabled"
 		}
 		form.todo.value = ""
 		console.log(todo)
@@ -48,8 +51,13 @@ function TodoController() {
 		//^^^^^^^ EXAMPLE OF HOW TO GET YOUR TOODOS AFTER AN EDIT
 	}
 
-	this.toggleTodoStatus = function (todoId) {
+	this.toggleTodoStatus = function (event) {
+		// console.log(event)
+		var todoId = event.target.value
+		// console.log(todoId)
 		// asks the service to edit the todo status
+		// todoId = todoId.value
+		// console.log(todoId)
 		todoService.toggleTodoStatus(todoId, getTodos)
 		// YEP THATS IT FOR ME
 	}
