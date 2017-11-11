@@ -23,17 +23,18 @@ function TodoController() {
 		//DONT FORGET TO LOOP
 		for (var i = 0; i < todos.length; i++) {
 			var todo = todos[i];
-			var checked = todo.status == "disabled" ? "checked=true" : ""
+			var checked = todo.status == "disabled" ? "checked" : ""
+			checked == "checked" ? strike = "strike" : strike = ""
 			// ***Start here = maybe add a span after the input template line with an id
 			//   to style the text? Come back after getting the deletes to work.
 			// var style = todo.status == "disabled" ? `style='color: blue'` : `style='color: yellow'`
-			var index = i; // Should match index of each todo in array (Use for delete)
+			// var index = i; // Should match index of each todo in array (Use for delete)
 			template += `
-			<input type="checkbox"  onchange="app.controllers.todoController.toggleTodoStatus(event)" name="${i}" value="${i}" ${checked}>${todo.todo}<br>
+			<input type="checkbox"  onchange="app.controllers.todoController.toggleTodoStatus(event)" name="${i}" value="${i}" ${checked}><span class='${strike}'>${todo.todo}</span><a href='javascript:;' onclick='app.controllers.todoController.removeTodo(${i})'><span class='fa fa-trash-o'></span></a><br>
 			`
 			// <p>${todo.todo}${index}</p>			
 		}
-		template += `<button type="submit">Delete finished Todo items</button>`
+		// template += `<button type="submit">Delete finished Todo items</button>`
 		todoElem.innerHTML = template
 	}
 	this.addTodoFromForm = function (e) {
@@ -67,9 +68,9 @@ function TodoController() {
 		// YEP THATS IT FOR ME
 	}
 
-	this.removeTodo = function (event) { //needs index? take in todo and find by value?
-		event.preventDefault() //event passed only so I could prevent default
-		todoService.removeTodo(getTodos)
+	this.removeTodo = function (index) { //needs index? take in todo and find by value?
+		// event.preventDefault() //event passed only so I could prevent default
+		todoService.removeTodo(index, getTodos)
 
 		// ^^^^ THIS LINE OF CODE PROBABLY LOOKS VERY SIMILAR TO THE toggleTodoStatus
 	}

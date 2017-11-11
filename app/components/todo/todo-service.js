@@ -54,29 +54,18 @@ function TodoService() {
 			.fail(logError)
 	}
 
-	this.removeTodo = function (callWhenDone) {
+	this.removeTodo = function (index, callWhenDone) {
 		// Umm this one is on you to write.... 
 		// It's also unique, like the ajax call above. The method is a DELETE
 
-		// Iterating through todos from the end of the array so that index
-		// shifting is not a problem as I remove elements
-		// Each iteration checks the status of the todo, and if 'disabled'
-		// runs a 'DELETE' for the element at 'i'
-		for (var i = todoList.length - 1; i >= 0; i--) {
-			var todo = todoList[i];
-			if (todo.status == 'disabled') {
-				$.ajax({
-					method: 'DELETE',
-					contentType: 'application/json',
-					url: baseUrl + '/' + i,
-				})
-					.then(function (res) {
-						callWhenDone()
-					})
-					.fail(logError)
-			}
-		}
-
+		$.ajax({
+			method: 'DELETE',
+			contentType: 'application/json',
+			url: baseUrl + '/' + index,
+		})
+			.then(function (res) {
+				callWhenDone()
+			})
+			.fail(logError)
 	}
-
 }
