@@ -3,4 +3,5 @@ body{
 }
 .strike{
     text-decoration: line-through;
+    color: #555555;
 }

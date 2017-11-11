@@ -20,6 +20,17 @@ function TodoService() {
 			.fail(logError)
 	}
 
+	this.todoCount = function todoCount() {
+		var itemsLeft = 0
+		for (var i = 0; i < todoList.length; i++) {
+			var todo = todoList[i];
+			if (todo.status == "enabled") {
+				itemsLeft++
+			}
+		}
+		return itemsLeft
+	}
+
 	this.addTodo = function (todo, callWhenDone) {
 		// WHAT IS THIS FOR???
 		$.post(baseUrl, todo)

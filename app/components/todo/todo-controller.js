@@ -19,7 +19,7 @@ function TodoController() {
 		//WHAT IS MY PURPOSE?
 		//BUILD YOUR TODO TEMPLATE HERE
 		var todoElem = document.getElementById('todo-list')
-		var template = ''
+		var template = `Remaining items: ${todoService.todoCount()}<br>`
 		//DONT FORGET TO LOOP
 		for (var i = 0; i < todos.length; i++) {
 			var todo = todos[i];
@@ -37,6 +37,7 @@ function TodoController() {
 		// template += `<button type="submit">Delete finished Todo items</button>`
 		todoElem.innerHTML = template
 	}
+
 	this.addTodoFromForm = function (e) {
 		e.preventDefault() // <-- hey this time its a freebie don't forget this
 		// TAKE THE INFORMATION FORM THE FORM
