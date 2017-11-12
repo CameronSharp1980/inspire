@@ -7,7 +7,7 @@ function ClockController() {
         var salutation = ''
         if (hours < 12) {
             salutation = "Good morning!";
-        } else if (hours > 12 && hours <= 5) {
+        } else if (hours > 12 && hours <= 17) {
             salutation = "Good afternoon!";
         } else {
             salutation = "Good evening";

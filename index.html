@@ -12,19 +12,17 @@
 <body id="body" onload="app.controllers.clockController.startClock()">
 	<div class="container-fluid">
 		<div class="row top-row">
-			<div class="col-sm-12 col-md-12 col-lg-3 weather-box">
+			<div class="col-sm-12 col-md-12 col-lg-2 weather-box">
 				<div id="weather" class="thumbnail thumbnailer thumbnailer-default">
 					Your Weather Template
 				</div>
 			</div>
-		</div>
-		<div class="row mid-row">
-			<div class="col-sm-12 col-md-12 col-lg-8 col-lg-offset-2">
+			<div class="col-sm-12 col-md-12 col-lg-8 clock-box">
 				<div id="clock">
 
 				</div>
 			</div>
-			<div class="col-sm-12 col-md-12 col-lg-2">
+			<div class="col-sm-12 col-md-12 col-lg-2 todo-box">
 				<div id="todo" class="thumbnail thumbnailer thumbnailer-default">
 					<div id="todo-list-div">
 						<form id="todo-list">
@@ -48,7 +46,13 @@
 					The Quote
 				</div>
 			</div>
-
+			<div class="col-sm-12 col-md-12 col-lg-2 config-box">
+				<div class="config-buttons thumbnail thumbnailer thumbnailer-default text-center">
+					<button class="icon-button icon-button-config" onclick="app.controllers.imageController.cycleImage()">
+						<span class="fa fa-file-image-o"></span>
+				</div>
+				</button>
+			</div>
 		</div>
 
 	</div>

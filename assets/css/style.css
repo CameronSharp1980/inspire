@@ -27,12 +27,16 @@ body{
 .icon-button-add{
     color: #0000ff;
 }
+.icon-button-config{
+    color: red;
+    font-size: 2em;
+}
 input[type=text] {
     background-color: #cccccc;
     color: #000000;
 }
 .top-row{
-    min-height: 20vh;
+    min-height: 95vh;
 }
 .mid-row{
     min-height: 75vh;
@@ -46,8 +50,11 @@ input[type=text] {
 .salutations{
     font-size: 3em;
 }
-.weather-box{
+.weather-box, .todo-box{
     margin-top: 15px;
+}
+.clock-box{
+    margin-top: 250px;
 }
 .weather-span{
     font-size: 2em;

@@ -17,10 +17,10 @@ function ImageController() {
 	// 	console.log(imageRes)
 	// })
 
+	this.cycleImage = function cycleImage() {
+		imageService.getImage(setBackground)
+	}
 }
 
-this.cycleImage = function cycleImage() {
-	imageService.getImage(setBackground)
-}
 
 
