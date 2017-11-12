@@ -32,14 +32,24 @@ input[type=text] {
     color: #000000;
 }
 .top-row{
-    min-height: 10vh;
+    min-height: 20vh;
 }
 .mid-row{
-    min-height: 80vh;
+    min-height: 75vh;
 }
 .quote-box{
     margin: auto;
 }
-#clock{
-    font-size: 16em;
+.clock{
+    font-size: 14em;
+}
+.salutations{
+    font-size: 3em;
+}
+.weather-box{
+    margin-top: 15px;
+}
+.weather-span{
+    font-size: 2em;
+    line-height: 2em;
 }

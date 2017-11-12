@@ -4,6 +4,14 @@ function ClockController() {
         var clockDiv = document.getElementById('clock')
         var todaysData = new Date();
         var hours = todaysData.getHours();
+        var salutation = ''
+        if (hours < 12) {
+            salutation = "Good morning!";
+        } else if (hours > 12 && hours <= 5) {
+            salutation = "Good afternoon!";
+        } else {
+            salutation = "Good evening";
+        }
         var ampm = hours >= 12 ? "PM" : "AM";
         var minutes = todaysData.getMinutes()
         if (hours > 12) {
@@ -12,7 +20,10 @@ function ClockController() {
         if (minutes < 10) {
             minutes = '0' + minutes
         }
-        clockDiv.innerHTML = `${hours}:${minutes}${ampm}`;
+        clockDiv.innerHTML = `
+            <span class="clock">${hours}:${minutes}${ampm}</span><br>
+            <span class="salutations">${salutation}</span>
+        `;
         var tickTock = setTimeout(startClock, 1000);
     }
 }

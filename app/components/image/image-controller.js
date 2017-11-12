@@ -5,7 +5,7 @@ function ImageController() {
 
 	function setBackground(imageObj) {
 		//tried imageObj.large_url to check if exists. Settled on this and removed return mentioned in image-service.js
-		if (imageObj.large_url != null) {
+		if (imageObj.large_url != null && imageObj.large_url[imageObj.large_url.length - 4] == '.') {
 			document.body.style.cssText += `background: url(${imageObj.large_url}); background-size: cover; background-repeat: no-repeat;`
 		} else {
 			imageService.getImage(setBackground)
@@ -17,6 +17,10 @@ function ImageController() {
 	// 	console.log(imageRes)
 	// })
 
+}
+
+this.cycleImage = function cycleImage() {
+	imageService.getImage(setBackground)
 }
 
 
