@@ -5,6 +5,6 @@ function QuoteController() {
 	quoteService.getQuote(function (quote) {
 		console.log('What is the quote', quote)
 		var quoteElem = document.getElementById('quote')
-		quoteElem.innerHTML = `<p>${quote.quote}`
+		quoteElem.innerHTML = `<div class="quote-box"><span>"${quote.quote}"</span></div>`
 	})
 }

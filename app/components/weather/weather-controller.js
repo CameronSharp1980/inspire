@@ -6,7 +6,7 @@ function WeatherController() {
 		console.log("draw weather started")
 		console.log("Weather Data: ", weatherData)
 		var weatherElem = document.getElementById('weather')
-		weatherElem.innerHTML = `<p>Current Temp: ${weatherData.main.temp}</p>`
+		weatherElem.innerHTML = `<span>${weatherData.main.temp}&degF</span>`
 	}
 
 	weatherService.getWeather(drawWeather)

@@ -1,7 +1,45 @@
 body{
-    color: red;
+    color: white;
 }
 .strike{
     text-decoration: line-through;
-    color: #555555;
+    color: rgb(173, 171, 166);
+}
+.thumbnailer{
+    display: inline-block;
+}
+.thumbnailer-default{
+    background-color: rgba(100, 100, 100, .85);
+}
+.thumbnailer-quote{
+    background-color: rgba(236, 231, 231, 0.85);
+    color: #642d03;
+    border: 1px solid #642d03;
+    margin: auto;
+}
+.icon-button{
+    background: none;
+    border: none;
+}
+.icon-button-trash{
+    color: #a80909;
+}
+.icon-button-add{
+    color: #0000ff;
+}
+input[type=text] {
+    background-color: #cccccc;
+    color: #000000;
+}
+.top-row{
+    min-height: 10vh;
+}
+.mid-row{
+    min-height: 80vh;
+}
+.quote-box{
+    margin: auto;
+}
+#clock{
+    font-size: 16em;
 }
