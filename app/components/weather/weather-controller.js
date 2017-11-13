@@ -3,7 +3,7 @@ function WeatherController() {
 	var weatherService = new WeatherService();
 
 	function drawWeather(weatherData) {
-		console.log("draw weather started")
+		// console.log("draw weather started")
 		console.log("Weather Data: ", weatherData)
 		var weatherElem = document.getElementById('weather')
 		weatherElem.innerHTML = `

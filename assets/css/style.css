@@ -14,6 +14,7 @@ body{
 .thumbnailer-quote{
     background-color: rgba(236, 231, 231, 0.85);
     color: #642d03;
+    font-size: 2em;
     border: 1px solid #642d03;
     margin: auto;
 }
@@ -36,13 +37,14 @@ input[type=text] {
     color: #000000;
 }
 .top-row{
-    min-height: 95vh;
+    min-height: 93vh;
 }
-.mid-row{
+/* .mid-row{
     min-height: 75vh;
-}
+} */
 .quote-box{
     margin: auto;
+    display: inline;
 }
 .clock{
     font-size: 14em;
@@ -54,9 +56,19 @@ input[type=text] {
     margin-top: 15px;
 }
 .clock-box{
-    margin-top: 250px;
+    margin-top: 200px;
 }
 .weather-span{
     font-size: 2em;
     line-height: 2em;
+}
+#quote-author-div{
+    opacity: 0;
+    transition: opacity 1s ease-in-out;
+    /* display: none; */
+    margin-left: 15px;
+}
+.quote-wrapper:hover div#quote-author-div{
+    opacity: 1;
+    /* display: inline; */
 }

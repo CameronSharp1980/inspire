@@ -10,7 +10,7 @@ function ClockController() {
         } else if (hours > 12 && hours <= 17) {
             salutation = "Good afternoon!";
         } else {
-            salutation = "Good evening";
+            salutation = "Good evening!";
         }
         var ampm = hours >= 12 ? "PM" : "AM";
         var minutes = todaysData.getMinutes()
