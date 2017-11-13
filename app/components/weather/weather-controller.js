@@ -7,12 +7,15 @@ function WeatherController() {
 		console.log("Weather Data: ", weatherData)
 		var weatherElem = document.getElementById('weather')
 		weatherElem.innerHTML = `
-		<span class="weather-span">${weatherData.name}: </span><span class="weather-span">${weatherData.main.temp}&degF </span><span><img src="http://openweathermap.org/img/w/${weatherData.weather[0].icon}.png"></span>
+		<span class="weather-span">${weatherData.name}: </span><span class="weather-span">${weatherData.main.temp} </span><span><img src="http://openweathermap.org/img/w/${weatherData.weather[0].icon}.png"></span>
 			`
 	}
 
 	weatherService.getWeather(drawWeather)
 
+	this.cycleWeatherType = function cycleWeatherType() {
+		weatherService.getWeather(drawWeather)
+	}
 	// weatherService.getWeather(function (weather) {
 	// 	console.log(weather);
 	// 	//What can you do with this weather object?

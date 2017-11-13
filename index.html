@@ -13,12 +13,12 @@
 	<div class="container-fluid">
 		<div class="row top-row">
 			<div class="col-sm-12 col-md-12 col-lg-2 weather-box">
-				<div id="weather" class="thumbnail thumbnailer thumbnailer-default">
+				<div id="weather" class="thumbnail thumbnailer thumbnailer-default" onclick="app.controllers.weatherController.cycleWeatherType()">
 					Your Weather Template
 				</div>
 			</div>
 			<div class="col-sm-12 col-md-12 col-lg-8 clock-box">
-				<div id="clock">
+				<div id="clock" onclick="app.controllers.clockController.cycleMilitaryTime()">
 
 				</div>
 			</div>
