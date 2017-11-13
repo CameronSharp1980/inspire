@@ -30,7 +30,7 @@ function TodoController() {
 			// var style = todo.status == "disabled" ? `style='color: blue'` : `style='color: yellow'`
 			// var index = i; // Should match index of each todo in array (Use for delete)
 			template += `
-				<input type="checkbox"  onchange="app.controllers.todoController.toggleTodoStatus(event)" name="${i}" value="${i}" ${checked}><span class='${strike}'>${todo.todo}</span><button class="icon-button icon-button-trash pull-right" onclick='app.controllers.todoController.removeTodo(${i})'><span class='fa fa-trash-o'></span></button><br>
+				<input type="checkbox" onchange="app.controllers.todoController.toggleTodoStatus(event)" name="${i}" value="${i}" ${checked}><span class='${strike}'>${todo.todo}</span><button class="icon-button icon-button-trash pull-right" onclick='app.controllers.todoController.removeTodo(${i})'><span class='fa fa-trash-o'></span></button><br>
 			`
 			// <input type="checkbox"  onchange="app.controllers.todoController.toggleTodoStatus(event)" name="${i}" value="${i}" ${checked}><span class='${strike}'>${todo.todo}</span><a href='javascript:;' onclick='app.controllers.todoController.removeTodo(${i})'><span class='fa fa-trash-o'></span></a><br>
 			// <p>${todo.todo}${index}</p>			

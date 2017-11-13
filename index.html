@@ -9,7 +9,7 @@
 	<link rel="stylesheet" href="assets/css/style.css">
 </head>
 
-<body id="body" onload="app.controllers.clockController.startClock()">
+<body id="body">
 	<div class="container-fluid">
 		<div class="row top-row">
 			<div class="col-sm-12 col-md-12 col-lg-2 weather-box">
@@ -31,9 +31,9 @@
 						</form>
 					</div>
 					<form onsubmit="app.controllers.todoController.addTodoFromForm(event)">
-						<label for="todo">New:</label>
-						<input type="text" name="todo" placeholder="Add Todo" required>
-						<button type="submit" class="icon-button icon-button-add">
+						<!-- <label for="todo">New:</label> -->
+						<input class="todo-input" type="text" name="todo" placeholder="Add Todo" required>
+						<button type="submit" class="icon-button icon-button-add pull-right">
 							<span class="fa fa-plus-square"></span>
 						</button>
 					</form>

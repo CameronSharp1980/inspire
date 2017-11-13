@@ -1,6 +1,6 @@
 function ClockController() {
 
-    this.startClock = function startClock() {
+    function startClock() {
         var clockDiv = document.getElementById('clock')
         var todaysData = new Date();
         var hours = todaysData.getHours();
@@ -26,4 +26,5 @@ function ClockController() {
         `;
         var tickTock = setTimeout(startClock, 1000);
     }
+    startClock();
 }

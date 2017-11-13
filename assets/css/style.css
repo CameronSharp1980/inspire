@@ -37,7 +37,7 @@ input[type=text] {
     color: #000000;
 }
 .top-row{
-    min-height: 93vh;
+    min-height: 90vh;
 }
 /* .mid-row{
     min-height: 75vh;
@@ -71,4 +71,7 @@ input[type=text] {
 .quote-wrapper:hover div#quote-author-div{
     opacity: 1;
     /* display: inline; */
+}
+.todo-input{
+    width: 75%;
 }
